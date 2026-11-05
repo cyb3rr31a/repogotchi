@@ -1,0 +1,12 @@
+# Private notes
+pitch.md
+
+# Dependencies and build output
+node_modules/
+dist/
+out/
+*.vsix
+
+# Test output
+coverage/
+.vscode-test/
