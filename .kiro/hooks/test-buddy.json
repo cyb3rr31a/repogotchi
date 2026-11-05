@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Test buddy (feed the pet)",
+      "description": "When core or collector code changes, ask the agent to make sure the matching test file covers every exported function. Repogotchi eats its own food.",
+      "trigger": "PostFileSave",
+      "matcher": "(^|[\\\\/])src[\\\\/](core|collectors)[\\\\/].*\\.ts$",
+      "action": {
+        "type": "agent",
+        "prompt": "A source file under src/core or src/collectors was just saved. Open the mirrored test file (src/x/y.ts -> test/x/y.test.ts, creating it if missing). For every exported function or class in the saved file, check there is at least one test covering its normal path and one covering an edge case or error path. Add only the missing tests, following the patterns already in test/. Do not change the source file's behaviour. If the file is in src/core and touches scoring or lifecycle rules, also check the matching *.prop.test.ts still covers the correctness properties listed in .kiro/specs/repogotchi/design.md. Finish by running `npx vitest run <the test file>` and report the result in one line."
+      }
+    }
+  ]
+}
