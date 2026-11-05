@@ -1,0 +1,16 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Core tests on save",
+      "description": "Runs the pure core test suite whenever a file in src/core is saved. Core logic must stay green at all times.",
+      "trigger": "PostFileSave",
+      "matcher": "(^|[\\\\/])src[\\\\/]core[\\\\/].*\\.ts$",
+      "action": {
+        "type": "command",
+        "command": "npx vitest run test/core --reporter=dot"
+      },
+      "timeout": 120
+    }
+  ]
+}
