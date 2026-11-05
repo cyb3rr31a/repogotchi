@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Pet check-up when the agent stops",
+      "description": "Prints Repogotchi's own vitals (coverage, TODOs, stale branches) at the end of each agent turn. Does nothing until scripts/self-scan.mjs exists (task 15).",
+      "trigger": "Stop",
+      "action": {
+        "type": "command",
+        "command": "node -e \"const fs=require('fs');if(fs.existsSync('scripts/self-scan.mjs')){require('child_process').execFileSync(process.execPath,['scripts/self-scan.mjs'],{stdio:'inherit'})}else{console.log('Repogotchi: self-scan not built yet (task 15)')}\""
+      },
+      "timeout": 60
+    }
+  ]
+}
