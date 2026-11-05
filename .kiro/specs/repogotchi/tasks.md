@@ -170,7 +170,7 @@
   - _Requirements: 11.1, 11.5_
 
 - [ ] 22. Package and document
-  - [ ] 22.1 Add the README: GIF of the reaper scene, install from `.vsix` in Kiro (Extensions → … → Install from VSIX) and VS Code, the five vitals plus poison and streaks explained, a settings table, a privacy note (no network; secrets masked and never stored), a note that the fever reflects files your language servers report on, and a "How Kiro was used" section covering this spec, the steering files and the hooks
+  - [ ] 22.1 Finish the existing `README.md`. Keep it for people using Repogotchi only: the pitch, demo plan and submission notes live in the gitignored `pitch.md`. Add a GIF of the reaper scene, check the install steps and settings table against the built extension, and fill in "How it was built with Kiro" from `KIRO_LOG.md`
     - _Requirements: 12.3_
   - [ ] 22.2 Add the icon, `LICENSE`, `CHANGELOG.md` and `.vscodeignore`. Run `npm run package`, install the `.vsix` in a clean Kiro profile, and walk through the demo checklist in `/demo-prep`
     - _Requirements: 12.1_
