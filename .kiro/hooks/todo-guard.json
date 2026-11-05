@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "TODO guard (keep the pet's home clean)",
+      "description": "Stops new TODO/FIXME/HACK/XXX markers from piling up silently in Repogotchi's own source.",
+      "trigger": "PostFileSave",
+      "matcher": "(^|[\\\\/])(src|webview)[\\\\/].*\\.ts$",
+      "action": {
+        "type": "agent",
+        "prompt": "Check whether the file just saved contains TODO, FIXME, HACK or XXX markers (whole words). If there are none, do nothing and say nothing. For each marker: if it can be resolved in under ~10 lines without changing the spec, resolve it. Otherwise, leave it in place and make sure it is listed in docs/known-gaps.md with file:line, a one-sentence description and the related requirement ID from .kiro/specs/repogotchi/requirements.md. Never add new markers yourself."
+      }
+    }
+  ]
+}
