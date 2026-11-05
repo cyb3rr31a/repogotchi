@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Verify after each spec task",
+      "description": "After Kiro finishes a spec task, type-check and run the unit and property tests so regressions surface immediately.",
+      "trigger": "PostTaskExec",
+      "action": {
+        "type": "command",
+        "command": "npm run verify --silent"
+      },
+      "timeout": 300
+    }
+  ]
+}
